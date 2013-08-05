@@ -60,6 +60,6 @@ module ChatApp
     config.assets.version = '1.0'
 
     #Add a line for asset pipeline compatibility
-    config.assets.precompile += %w([)*.png *.jpg *.jpeg *.gif)
+    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
   end
 end
