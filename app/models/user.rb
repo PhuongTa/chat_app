@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   validates :name, presence: true, length: {maximum: 50}
 
   # email: presence + format + uniqueness #kiem tra trung
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-_]+\.[a-z]{1,3}+\z/i
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-_]+(\.[a-z]+)*\.[a-z]{1,3}\z/i
   validates :email, presence: true, 
   					format:{ with: VALID_EMAIL_REGEX},
   					uniqueness: {case_sensitive: false}
