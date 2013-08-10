@@ -25,10 +25,25 @@ module SessionsHelper
 		@current_user ||= User.find_by_remember_token(remember_token)
 	end
 
+	def current_user?(user)
+		user == current_user
+	end
 
 	def sign_out
 		self.current_user = nil
 		cookies.delete(:remember_token)
+	end
+
+	# Chuyen huong co luu tru trang
+	# Friendly forwarding
+
+	def store_location
+		session[:backto] = request.url
+	end
+
+	def redirect_back_or(default)
+		redirect_to(session[:backto] || default)
+		session.delete(:backto)
 	end
 
 end

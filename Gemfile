@@ -4,6 +4,14 @@ gem 'rails', '3.2.13'
 gem 'bootstrap-sass'
 #crypt password
 gem 'bcrypt-ruby', '~> 3.0.1'
+# Automatically make user, etc..
+gem 'faker', '1.1.2'
+# Paginate
+gem 'bootstrap-will_paginate', '0.0.9'
+# Strong parameters
+gem 'strong_parameters'
+
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

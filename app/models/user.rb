@@ -1,10 +1,11 @@
 class User < ActiveRecord::Base
+  include ActiveModel::ForbiddenAttributesProtection 
 
   #before_save{self.email = email.downcase}
   before_save{ email.downcase! }
   before_create :create_remember_token
 
-  attr_accessible :email, :name,:password, :password_confirmation
+  #attr_accessible :email, :name,:password, :password_confirmation,:admin
 
   # Validating presence :name & :email
   # name : presence + length
